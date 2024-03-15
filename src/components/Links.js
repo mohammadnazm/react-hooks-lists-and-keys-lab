@@ -1,13 +1,17 @@
 import React from "react";
 
-function Links({ github, linkedin }) {
+function NavBar() {
+  const links = ["home", "about", "projects"];
+
   return (
-    <div>
-      <h3>Links</h3>
-      <a href={github}>{github}</a>
-      <a href={linkedin}>{linkedin}</a>
-    </div>
+    <nav>
+      {links.map((link, index) => (
+        <a key={index} href={`#${link}`}>
+          {link}
+        </a>
+      ))}
+    </nav>
   );
 }
 
-export default Links;
+export default NavBar;
